@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 . .env_maps
 
 
-echo "Inicializado a sincronização..."
+echo "Sync initialized..."
 
 rsync -azPv --progress ${FROM_DIR} ${USERNAME}@${HOSTNAME}:${BASE_DIR}
