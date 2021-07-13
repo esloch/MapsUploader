@@ -37,7 +37,7 @@ sync_maps
 │ ├── incidence_RJ_dengue.png
 │ ├── incidence_SC_chikungunya.png
 │ ├── incidence_SC_dengue.png
-│ └── incidence_SC_zika.png
+└─└── incidence_SC_zika.png
 
 ```
 
@@ -49,5 +49,5 @@ sync_maps
 
 
 #### How to configure?
-Create the environment file `` `.env_maps``` inside the sync_maps directory with the variables.
+Create the environment file ```.env_maps ``` inside the sync_maps directory with the variables.
 Once you have secured and tested access via ssh just run the ```make update_release``` command inside the *sync_maps/* directory.
