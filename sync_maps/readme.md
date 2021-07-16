@@ -5,14 +5,11 @@ This tool automates the sending of incidences maps.
 
 #### How to use?
 
-```make send_maps```:
-> Only synchronizes map images.
+*Synchronizing the map images in the production:*
+```make send_maps_staging```
 
-```make restart_services```:
-> Restart container services.
-
-```make update_release```:
-> Execute all tasks.
+*Synchronizing the map images in the staging:*
+```make send_maps_production```
 
 #### Directory structure:
 
@@ -47,7 +44,5 @@ sync_maps
 - Test ssh access:
 > ssh username@hostname
 
-
 #### How to configure?
 Create the environment file ```.env_maps ``` inside the sync_maps directory with the variables.
-Once you have secured and tested access via ssh just run the ```make update_release``` command inside the *sync_maps/* directory.
