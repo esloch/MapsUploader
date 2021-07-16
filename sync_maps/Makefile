@@ -1,17 +1,15 @@
-
+#######################
+### > upload maps < ###
+#######################
 
 include .env_maps
 
-MAKE = make -f Makefile
+
+send_maps_staging:
+	rsync -azPv --delete --progress ${FROM_DIR} ${USERNAME}@${HOSTNAME}:${STAGING_DATA}
+	ssh ${USERNAME}@${HOSTNAME} 'cd ${STAGING_REPO} && ./update_static_files.sh'
 
 
-send_maps:
-	./rsync_maps.sh
-
-restart_server:
-	ssh ${USERNAME}@${HOSTNAME} 'cd ${STAGING_DIR} && ./release_update.sh'
-
-
-update_release:
-	$(MAKE) send_maps
-	$(MAKE) restart_server
+send_maps_production:
+	rsync -azPv --delete --progress ${FROM_DIR} ${USERNAME}@${HOSTNAME}:${INFODENGUE_DATA}
+	ssh ${USERNAME}@${HOSTNAME} 'cd ${INFODENGUE_REPO} && ./update_static_files.sh'
