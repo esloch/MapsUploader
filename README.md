@@ -1,10 +1,11 @@
 ## UPDATE INCIDENCE MAPS
 
-### This tool automates the sending of incidences maps to the repositories on the server.
+### This tool automates the sending of incidences maps to the host repositories.
+The map images are used for visualizations on the AlertaDengue website.
 
 #### Requirements:
 
-Make sure you have your [ssh-key](https://www.ssh.com/academy/ssh/keygen#ssh-keys-and-public-key-authentication) on the target host and file system access privileges
+Make sure you have your [ssh-key](https://www.ssh.com/academy/ssh/keygen#ssh-keys-and-public-key-authentication) on the target host and file system access privileges.  
 *Install dependencies:*
 ``` 
 $ sudo apt update && sudo apt install rsync gettext-base
@@ -12,7 +13,7 @@ $ sudo apt update && sudo apt install rsync gettext-base
 
 #### How to configure?
 
-Create the .env_maps file using the environment template file and set the variables
+Create the .env_maps file using the environment template file and set the variables.  
 *Run the command:*
 ``` 
 $ make envsubst
@@ -24,8 +25,8 @@ $ make envsubst
 $ make upload_maps
 ``` 
 
-#### Directory structure:
-*Directory structure and file name patterns must be maintained*
+#### Directory structure
+*Directory structure and file name patterns must be maintained:*
 ```
 sync_maps
 ├── incidence_maps
